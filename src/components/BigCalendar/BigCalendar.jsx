@@ -7,7 +7,6 @@ import withPreventDefault from "../../utils/withStopPropagation";
 import withStopPropagation from "../../utils/withStopPropagation";
 import {clickOnEventName} from "../../Calendar/Calendar";
 import {useNavigate} from "react-router-dom";
-import {CgClose} from "react-icons/all";
 import getDayClass from "../../utils/getDayClass.js";
 import {toast} from "react-toastify";
 

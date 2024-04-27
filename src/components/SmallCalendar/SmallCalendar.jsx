@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import dayjs from "dayjs";
 import getMonthDayMartix from "../../utils/getMonthDayMartix.js";
 import getDayClass from "../../utils/getDayClass.js";
+import rightArrow from "../../assets/right-arrow.png";
+import leftArrow from "../../assets/left-arrow.png";
 
 import "./smallCalendar.scss";
 
@@ -58,7 +59,7 @@ const SmallCalendar = ({ className = "", onChange, value }) => {
             onClick={() => jumpPrevMonth()}
           >
             <div className="date-cell">
-              <BiChevronLeft className="text-sm" />
+            <img src={leftArrow} alt="My Image" className="smallImage" />
             </div>
           </li>
           <li
@@ -66,7 +67,7 @@ const SmallCalendar = ({ className = "", onChange, value }) => {
             onClick={() => jumpNextMonth()}
           >
             <div className="date-cell">
-              <BiChevronRight className="text-sm" />
+            <img src={rightArrow} alt="My Image" className="smallImage" />
             </div>
           </li>
         </div>

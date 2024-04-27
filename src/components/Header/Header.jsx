@@ -1,19 +1,11 @@
 import React, { useContext, useState } from "react";
-import {
-  BiChevronLeft,
-  BiChevronRight,
-  BiInfoCircle,
-  BiSearch,
-  BsGear,
-  FaSignInAlt,
-  FaSignOutAlt,
-  HiBars3,
-  MdDashboard,
-} from "react-icons/all";
 import CalendarContext from "../../context/CalendarContext";
 import dayjs from "dayjs";
 import Select from "../Form/Select";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import rightArrow from "../../assets/right-arrow.png";
+import leftArrow from "../../assets/left-arrow.png";
+import profile from "../../assets/profile_10441736.png";
 
 const Header = () => {
   const {
@@ -82,14 +74,13 @@ const Header = () => {
 
   return (
     <header className="flex justify-between py-3 px-3 items-center border-b">
-      <HiBars3 className="bar-icon" fontSize={20} />
+      {/* <HiBars3 className="bar-icon" fontSize={20} /> */}
 
       <div className="flex items-center gap-x-1">
         <Link to="/">
           <div className="flex items-center gap-x-1 ">
-            <h4 className="hidden md:block text-sm font-bold">Calendar by</h4>
+            <h4 className="hidden md:block text-sm font-bold"> 📅  Calendar</h4>
           </div>
-          <h5 className="hidden md:block text-sm font-bold">Rashmiranjan</h5>
         </Link>
         <div className="col-span-10 flex items-center ml-2 md:ml-6 lg:ml-10 gap-x-1 md:gap-x-4">
           <button className="btn" onClick={resetDate}>
@@ -101,13 +92,13 @@ const Header = () => {
               className="btn btn-circle list-none text-2xl"
               onClick={jumpPrevMonth}
             >
-              <BiChevronLeft />
+              <img src={leftArrow} alt="My Image" className="smallImage" />
             </li>
             <li
               className="btn btn-circle list-none text-2xl"
               onClick={jumpNextMonth}
             >
-              <BiChevronRight />
+              <img src={rightArrow} alt="My Image" className="smallImage" />
             </li>
           </div>
 
@@ -125,14 +116,12 @@ const Header = () => {
       <div className="flex items-center gap-x-2 md:gap-x-8 col-span-6">
         <div className="flex items-center gap-x-2 md:gap-x-4   col-span-6">
           <li className="list-none text-2xl">
-            <BiSearch className="text-gray-700" />
+          <h5 className="hidden md:block text-sm font-bold">Calendar by Rashmiranjan</h5>
           </li>
 
           <li className="list-none text-xl">
-            <BiInfoCircle className="text-gray-700" />
           </li>
           <li className="list-none text-xl">
-            <BsGear className="text-gray-700" />
           </li>
         </div>
 
@@ -155,9 +144,9 @@ const Header = () => {
         ></Select>
 
         <li>
-          {
+          { 
             <Link>
-              <FaSignInAlt className="text-sm text-gray-700" />
+              <img src={profile} alt="My Image" className="smallImageOne" />
             </Link>
           }
         </li>

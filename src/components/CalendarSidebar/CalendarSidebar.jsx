@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { plus } from "../../icons/plus";
-import {
-  BiCaretDown,
-  BiChevronDown,
-  BiChevronRight,
-  BiPlus,
-} from "react-icons/all";
+import "./calendarSidebar.css";
 import SmallCalendar from "../SmallCalendar/SmallCalendar";
 import Accordion from "../Accordion/Accordion";
 import statusColors from "../../utils/statusColors";
 import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
+import rightArrow from "../../assets/right-arrow.png";
+import downArrow from "../../assets/downarrow.png";
+import plusArrow from "../../assets/plus.png";
 
 const CalendarSidebar = (props) => {
   const {
@@ -100,8 +98,12 @@ const CalendarSidebar = (props) => {
           className="btn flex items-center  mt-4 add-new-btn"
           onClick={() => openAddNewEventModal("event")}
         >
-          <BiPlus className="text-xl text-primary" />
           <span className="mr-4 font-medium text-sm">New Event</span>
+          <img
+            src={plusArrow}
+            alt="My Image"
+            className="smallImage"
+          />
         </button>
       </div>
 
@@ -120,9 +122,9 @@ const CalendarSidebar = (props) => {
               >
                 <h4 className="">My Calendar</h4>
                 {isOpen ? (
-                  <BiChevronDown className="text-xs text-gray-500" />
+                  <img src={downArrow} alt="My Image" className="smallImage" />
                 ) : (
-                  <BiChevronRight className="text-xs text-gray-500" />
+                  <img src={rightArrow} alt="My Image" className="smallImage" />
                 )}
               </div>
             )}
@@ -158,9 +160,9 @@ const CalendarSidebar = (props) => {
               >
                 <h4 className="">My Events</h4>
                 {isOpen ? (
-                  <BiChevronDown className="text-xs text-gray-500" />
+                  <img src={downArrow} alt="My Image" className="smallImage" />
                 ) : (
-                  <BiChevronRight className="text-xs text-gray-500" />
+                  <img src={rightArrow} alt="My Image" className="smallImage" />
                 )}
               </div>
             )}
@@ -202,7 +204,7 @@ const CalendarSidebar = (props) => {
                         ? " more"
                         : " less"}
                     </label>
-                    <BiChevronDown />
+                    <img src={downArrow} alt="My Image" className="smallImage" />
                   </div>
                 </div>
               )}
